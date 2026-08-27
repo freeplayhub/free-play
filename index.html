@@ -321,27 +321,33 @@
         </div>
     </div>
 
-    <!-- Script Pemicu Locker -->
+    <!-- Script Pemicu Locker Universal (AdBlueMedia Fix) -->
     <script type="text/javascript">
-        function callAdBlueLocker() {
+        function triggerAdBlueLocker() {
+            // Mencoba memanggil semua nama fungsi pemicu yang digunakan AdBlueMedia / CPABuild
             if (typeof _CallLocker === 'function') {
                 _CallLocker();
             } else if (typeof _CPALocker === 'function') {
                 _CPALocker();
             } else if (typeof tnkpK_iWL_ihKEIc !== 'undefined' && typeof window[tnkpK_iWL_ihKEIc.key] === 'function') {
                 window[tnkpK_iWL_ihKEIc.key]();
+            } else if (typeof call_locker === 'function') {
+                call_locker();
             } else {
-                console.log("Locker sedang dimuat...");
+                // Jika script Cloudfront terblokir AdBlocker/DNS
+                alert("Koneksi locker gagal dipanggil. Pastikan AdBlocker/DNS pemblokir iklan di HP Anda dinonaktifkan.");
             }
         }
 
-        document.querySelectorAll('.trigger-locker').forEach(function(element) {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                callAdBlueLocker();
+        document.addEventListener('DOMContentLoaded', function() {
+            var targets = document.querySelectorAll('.trigger-locker');
+            targets.forEach(function(elem) {
+                elem.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    triggerAdBlueLocker();
+                });
             });
         });
     </script>
 </body>
 </html>
-
