@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FreePlay - Mobile Hub (12 Games)</title>
+
+    <!-- Script Content Locker AdBlueMedia -->
+    <script type="text/javascript">
+        var tnkpK_iWL_ihKEIc={"it":4333554,"key":"3f524"};
+    </script>
+    <script src="https://d18k3i06xdslhs.cloudfront.net/66128ec.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background-color: #0d0f17;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .mobile-container {
+            width: 100%;
+            max-width: 430px;
+            background-color: #0b0d14;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            padding-bottom: 70px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #121520;
+            padding: 12px 16px;
+            border-bottom: 1px solid #1a1e2e;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            fill: #a0aec0;
+        }
+
+        .url-pill {
+            background-color: #1a1e2e;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 13px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        main {
+            padding: 14px;
+            flex: 1;
+        }
+
+        .welcome-banner {
+            background: linear-gradient(180deg, #3a2503 0%, #1c1001 100%);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 12px 10px;
+            text-align: center;
+            margin-bottom: 14px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+        }
+
+        .welcome-banner h2 {
+            color: #fff3b0;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .featured-card {
+            background: linear-gradient(135deg, #2a1b08 0%, #15101a 100%);
+            border: 1px solid #b8860b;
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .featured-tag {
+            font-size: 10px;
+            color: #a0aec0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .featured-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .featured-text {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .featured-title {
+            font-size: 18px;
+            font-weight: 900;
+            color: #f6ad55;
+            margin-bottom: 4px;
+        }
+
+        .featured-desc {
+            font-size: 9px;
+            color: #cbd5e0;
+            margin-bottom: 10px;
+        }
+
+        .btn-play-now {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .featured-img-box {
+            width: 110px;
+            height: 110px;
+            background-color: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .game-card {
+            background-color: #161b26;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #232a3b;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .game-card:active {
+            transform: scale(0.96);
+        }
+
+        .game-thumb {
+            width: 100%;
+            height: 90px;
+            background-color: #2d3748;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 9px;
+        }
+
+        .game-details {
+            padding: 6px 4px 8px 4px;
+            background-color: #121520;
+        }
+
+        .game-title {
+            font-size: 10px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .game-subtitle {
+            font-size: 8px;
+            color: #a0aec0;
+            margin-bottom: 4px;
+        }
+
+        .game-badge {
+            background-color: #e53e3e;
+            color: #ffffff;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 4px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 430px;
+            background-color: #0f121c;
+            border-top: 1px solid #1a1e2e;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 8px 0;
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            color: #718096;
+            font-size: 10px;
+            width: 20%;
+        }
+
+        .nav-item.active { color: #f6ad55; }
+        .nav-item svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .spin-btn-container { position: relative; top: -12px; }
+        .spin-btn {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ecc94b 0%, #d69e2e 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 12px rgba(214, 158, 46, 0.6);
+            border: 3px solid #0f121c;
+            cursor: pointer;
+        }
+        .spin-btn svg { width: 26px; height: 26px; fill: #1a202c; }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <header>
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            <div class="url-pill">🔒 freeplay.com</div>
+            <svg class="header-icon" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+        </header>
+
+        <main>
+            <div class="welcome-banner">
+                <h2>WELCOME BONUS $250 FOR ALL NEW PLAYERS!</h2>
+            </div>
+
+            <div class="featured-tag">FEATURED</div>
+            <div class="featured-card trigger-locker">
+                <div class="featured-content">
+                    <div class="featured-text">
+                        <div class="featured-title">GOLDEN DRAGON</div>
+                        <div class="featured-desc">Venture into the ancient dragon lair to uncover vast treasures and golden jackpots. Master unique power-ups.</div>
+                        <button class="btn-play-now">PLAY NOW &rsaquo;</button>
+                    </div>
+                    <div class="featured-img-box">Gambar<br>Naga</div>
+                </div>
+            </div>
+
+            <!-- 12 Game Grid -->
+            <div class="game-grid">
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 1</div><div class="game-details"><div class="game-title">WOLF LEGEND</div><div class="game-subtitle">MEGACELL</div><div class="game-badge">€1.185,48</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 2</div><div class="game-details"><div class="game-title">GREAT RHINO</div><div class="game-subtitle">DELUXE</div><div class="game-badge">€1.105,48</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 3</div><div class="game-details"><div class="game-title">GONZO'S QUEST</div><div class="game-subtitle">MEGAWAYS</div><div class="game-badge">€1.105,48</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 4</div><div class="game-details"><div class="game-title">SWEET BONANZA</div><div class="game-subtitle">SLOTS</div><div class="game-badge">€2.450,10</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 5</div><div class="game-details"><div class="game-title">GATES OF OLYMPUS</div><div class="game-subtitle">SLOTS</div><div class="game-badge">€3.120,00</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 6</div><div class="game-details"><div class="game-title">AZTEC GEM</div><div class="game-subtitle">DELUXE</div><div class="game-badge">€890,50</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 7</div><div class="game-details"><div class="game-title">STARBURST</div><div class="game-subtitle">CLASSIC</div><div class="game-badge">€1.430,20</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 8</div><div class="game-details"><div class="game-title">BOOK OF DEAD</div><div class="game-subtitle">ADVENTURE</div><div class="game-badge">€5.670,00</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 9</div><div class="game-details"><div class="game-title">FIRE JOKER</div><div class="game-subtitle">RETRO</div><div class="game-badge">€740,00</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 10</div><div class="game-details"><div class="game-title">WILD WEST GOLD</div><div class="game-subtitle">MEGAWAYS</div><div class="game-badge">€1.890,30</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 11</div><div class="game-details"><div class="game-title">BUFFALO KING</div><div class="game-subtitle">DELUXE</div><div class="game-badge">€2.010,75</div></div></div>
+                <div class="game-card trigger-locker"><div class="game-thumb">Gambar 12</div><div class="game-details"><div class="game-title">BIG BASS BONANZA</div><div class="game-subtitle">FISHING</div><div class="game-badge">€1.350,60</div></div></div>
+            </div>
+        </main>
+
+        <div class="bottom-nav">
+            <a class="nav-item active"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span>Home</span></a>
+            <a class="nav-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span>Explore</span></a>
+            <div class="spin-btn-container trigger-locker">
+                <div class="spin-btn"><svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg></div>
+            </div>
+            <a class="nav-item"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Account</span></a>
+            <a class="nav-item"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg><span>Help</span></a>
+        </div>
+    </div>
+
+    <!-- Script Pemicu Locker -->
+    <script type="text/javascript">
+        function callAdBlueLocker() {
+            if (typeof _CallLocker === 'function') {
+                _CallLocker();
+            } else if (typeof _CPALocker === 'function') {
+                _CPALocker();
+            } else if (typeof tnkpK_iWL_ihKEIc !== 'undefined' && typeof window[tnkpK_iWL_ihKEIc.key] === 'function') {
+                window[tnkpK_iWL_ihKEIc.key]();
+            } else {
+                console.log("Locker sedang dimuat...");
+            }
+        }
+
+        document.querySelectorAll('.trigger-locker').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                callAdBlueLocker();
+            });
+        });
+    </script>
+</body>
+</html>
+
