@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FreePlay - Mobile Hub (12 Games)</title>
 
-    <!-- Script Content Locker AdBlueMedia -->
+    <!-- Script Content Locker Original AdBlueMedia -->
     <script type="text/javascript">
-        var tnkpK_iWL_ihKEIc={"it":4333554,"key":"3f524"};
+        var kVhtL_JUR_oxCFoc={"it":4333554,"key":"3f524"};
     </script>
-    <script src="https://d18k3i06xdslhs.cloudfront.net/66128ec.js"></script>
+    <script src="https://d18k3i06xdslhs.cloudfront.net/fee8a1b.js"></script>
 
     <style>
         * {
@@ -321,21 +321,20 @@
         </div>
     </div>
 
-    <!-- Script Pemicu Locker Universal (AdBlueMedia Fix) -->
+    <!-- Script Pemicu Sesuai Variabel Kunci Original Anda -->
     <script type="text/javascript">
-        function triggerAdBlueLocker() {
-            // Mencoba memanggil semua nama fungsi pemicu yang digunakan AdBlueMedia / CPABuild
-            if (typeof _CallLocker === 'function') {
+        function triggerOriginalLocker() {
+            // Memanggil fungsi berdasarkan variabel 'key' ("3f524") dari script asli Anda
+            if (typeof window['3f524'] === 'function') {
+                window['3f524']();
+            } else if (typeof kVhtL_JUR_oxCFoc !== 'undefined' && typeof window[kVhtL_JUR_oxCFoc.key] === 'function') {
+                window[kVhtL_JUR_oxCFoc.key]();
+            } else if (typeof _CallLocker === 'function') {
                 _CallLocker();
             } else if (typeof _CPALocker === 'function') {
                 _CPALocker();
-            } else if (typeof tnkpK_iWL_ihKEIc !== 'undefined' && typeof window[tnkpK_iWL_ihKEIc.key] === 'function') {
-                window[tnkpK_iWL_ihKEIc.key]();
-            } else if (typeof call_locker === 'function') {
-                call_locker();
             } else {
-                // Jika script Cloudfront terblokir AdBlocker/DNS
-                alert("Koneksi locker gagal dipanggil. Pastikan AdBlocker/DNS pemblokir iklan di HP Anda dinonaktifkan.");
+                console.log("Locker sedang dimuat atau diblokir ekstensi.");
             }
         }
 
@@ -344,7 +343,7 @@
             targets.forEach(function(elem) {
                 elem.addEventListener('click', function(e) {
                     e.preventDefault();
-                    triggerAdBlueLocker();
+                    triggerOriginalLocker();
                 });
             });
         });
