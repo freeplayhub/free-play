@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FreePlay - Mobile Hub (12 Games)</title>
 
-    <!-- Script Content Locker Original AdBlueMedia -->
+    <!-- Script Content Locker Original AdBlueMedia Anda -->
     <script type="text/javascript">
         var kVhtL_JUR_oxCFoc={"it":4333554,"key":"3f524"};
     </script>
@@ -247,6 +247,7 @@
             color: #718096;
             font-size: 10px;
             width: 20%;
+            cursor: pointer;
         }
 
         .nav-item.active { color: #f6ad55; }
@@ -321,29 +322,18 @@
         </div>
     </div>
 
-    <!-- Script Pemicu Sesuai Variabel Kunci Original Anda -->
+    <!-- Script Pemicu Resmi Menggunakan _gD() -->
     <script type="text/javascript">
-        function triggerOriginalLocker() {
-            // Memanggil fungsi berdasarkan variabel 'key' ("3f524") dari script asli Anda
-            if (typeof window['3f524'] === 'function') {
-                window['3f524']();
-            } else if (typeof kVhtL_JUR_oxCFoc !== 'undefined' && typeof window[kVhtL_JUR_oxCFoc.key] === 'function') {
-                window[kVhtL_JUR_oxCFoc.key]();
-            } else if (typeof _CallLocker === 'function') {
-                _CallLocker();
-            } else if (typeof _CPALocker === 'function') {
-                _CPALocker();
-            } else {
-                console.log("Locker sedang dimuat atau diblokir ekstensi.");
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             var targets = document.querySelectorAll('.trigger-locker');
             targets.forEach(function(elem) {
                 elem.addEventListener('click', function(e) {
                     e.preventDefault();
-                    triggerOriginalLocker();
+                    if (typeof _gD === 'function') {
+                        _gD();
+                    } else {
+                        alert("Koneksi locker gagal dipanggil. Pastikan AdBlocker/DNS pemblokir iklan di HP Anda dinonaktifkan.");
+                    }
                 });
             });
         });
